@@ -1,38 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #14bdac;
+}
 .App {
-  text-align: center;
+  max-width: 500px;
+  margin: 30px auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game_header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0px;
+}
+.game_header > h1 {
+  font-family: "Vina Sans", cursive;
+  color: #00218f;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.icon {
+  width: 43px;
+  height: 43px;
+
+  list-style: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #00218f;
+  box-shadow: 1px 3px 10px 0px #00218f;
+}
+.icon:hover {
+  box-shadow: 1px 3px 15px 0px #00218f;
+}
+.icon:active {
+  box-shadow: 1px 3px 15px 0px #00218f;
+  transform: scale(0.9);
+  transition: all 0.2s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 500px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.square {
+  width: 33.333%;
+  height: 33.333%;
+  border: 3px solid #5ea092;
+  font-size: 6rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square:first-child {
+  border-left: none;
+  border-top: none;
+}
+.square:nth-child(2) {
+  border-top: none;
+}
+.square:nth-child(3) {
+  border-right: none;
+  border-top: none;
+}
+.square:nth-child(4) {
+  border-left: none;
+}
+.square:nth-child(6) {
+  border-right: none;
+}
+.square:nth-child(7) {
+  border-left: none;
+  border-bottom: none;
+}
+.square:nth-child(8) {
+  border-bottom: none;
+}
+.square:nth-child(9) {
+  border-right: none;
+  border-bottom: none;
+}
+.square:hover {
+  background: #5ea092;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 563px) {
+  .App {
+    margin: 30px;
   }
 }
